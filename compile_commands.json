@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/src/multiply",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test/src/multiply/include -g -std=c++17 -o CMakeFiles/multiply.dir/multiply.cpp.o -c /home/pseudo/cpp-repos/g-test/src/multiply/multiply.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/src/multiply/multiply.cpp"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/tests",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test/src/multiply/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/multiply_test.dir/multiply_test.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/multiply_test.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/tests/multiply_test.cpp"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/include -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/g++  -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest-all.cc"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/g++  -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest_main.cc"
+}
+]
