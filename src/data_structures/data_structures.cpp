@@ -1,6 +1,6 @@
 #include <data_structures/data_structures.h>
 
-auto Person::getname(){
+const char* Person::getname(){
     return name;
 }
 

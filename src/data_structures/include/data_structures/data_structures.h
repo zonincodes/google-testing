@@ -6,19 +6,26 @@
 struct Person
 {
     public:
-        Person(char * name, int age): name(name), age(age) {};
+        Person(const char * name, int age):age(age) {
+            this -> name = new char[strlen(name) + 1];
+            strcpy(this->name, name);
+        };
+        ~Person()
+        {
+            delete[]name;
+        }
         Person()
         {
             name = nullptr;
             age = 0;
         }
     
-    auto getname();
+    const char* getname();
 
     int getage();
 
     private:
-        char * name;
+        char* name;
         int age;
 };
 
