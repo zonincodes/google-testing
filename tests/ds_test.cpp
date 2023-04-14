@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <data_structures/data_structures.h>
 
-
+#include <bitset>
 TEST(DsTests, TestName_Henry)
 {
     Person jimmy{"Jimmy", 23};
@@ -16,6 +16,14 @@ TEST(ArrayTests, TestArray)
     int fib_front = fib.front();
     int expcted = 1;
     ASSERT_EQ(fib.front(), 0);
+}
+
+TEST(BitsetTests, Bitset_support_interger_initialization){
+    std::bitset<4> bs(0b0101);
+    EXPECT_TRUE(bs[0]);
+    EXPECT_FALSE(bs[1]);
+    EXPECT_TRUE(bs[2]);
+    EXPECT_FALSE(bs[3]);
 }
 
 int main(int argc, char **argv)
