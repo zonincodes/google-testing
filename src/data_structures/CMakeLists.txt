@@ -1,0 +1,2 @@
+add_library(data_structures data_structures.cpp)
+target_include_directories(data_structures PUBLIC include)
