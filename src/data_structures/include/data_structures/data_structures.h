@@ -12,6 +12,10 @@ struct Person
             name = nullptr;
             age = 0;
         }
+    
+    auto getname();
+
+    int getage();
 
     private:
         char * name;
