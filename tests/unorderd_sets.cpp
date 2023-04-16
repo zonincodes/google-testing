@@ -64,13 +64,17 @@ TEST(StdAdvance, AdvanceModifiesInputIterators)
 TEST(StdNext, NextReturnsIteratorsAtGivenOffsets){
     std::vector<unsigned char> mission{
         0x9e, 0xc4, 0xc1, 0x29,
-        0x49, 0xf2, 0x99, 0x05,
+        0x49, 0xa4, 0xf3, 0x14,
         0x74, 0xf2, 0x99, 0x05,
         0x8c, 0xe2, 0xb2, 0x2a};
     
     auto itr1 = mission.begin();
     std::advance(itr1, 4);
     EXPECT_EQ(*itr1, 0x49);
+    auto itr2 = std::next(itr1);
+    EXPECT_EQ(*itr2, 0xa4);
+    auto itr3 = std::next(itr1, 4);
+    EXPECT_EQ(*itr3, 0x74);
 }
 int main(int argc, char **argv)
 {
