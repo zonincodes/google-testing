@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 #include <iterator>
 #include <deque>
-
+#include <forward_list>
 TEST(InsertIterators, ConvertWritesIntoContainerInsertion)
 {
     std::deque<int> dq;
@@ -26,6 +26,19 @@ TEST(InsertIterators, ConvertWritesIntoContainerInsertion)
     EXPECT_TRUE(dq[3] == 4);
 }
 
+
+TEST(StdForwardList, BeginAndEndProvideIterators)
+{
+    const std::forward_list<int> easy_as{1, 2, 3};
+    auto itr = easy_as.begin();
+    EXPECT_EQ(*itr, 1);
+    itr++;
+    EXPECT_EQ(*itr, 2);
+    itr++;
+    EXPECT_EQ(*itr, 3);
+    itr++;
+    EXPECT_EQ(itr, easy_as.end());
+}
 
 int main(int argc, char **argv)
 {
