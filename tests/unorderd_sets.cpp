@@ -103,6 +103,35 @@ TEST(StdIterSwap, SwapsPointedToElemets)
     EXPECT_EQ(easy_as[2], 3);
 }
 
+struct Movable{
+    Movable(int id): id{ id } {}
+    Movable(Movable&& m){
+        id = m.id;
+        m.id = -1;
+    }
+    int id;
+};
+
+TEST(StdMakeMove, MoveIterators)
+{
+    std::vector<Movable> donor;
+    donor.emplace_back(1);
+    donor.emplace_back(2);
+    donor.emplace_back(3);
+
+    std::vector<Movable> recipient{
+        std::make_move_iterator(donor.begin()),
+        std::make_move_iterator(donor.end())
+    };
+
+    EXPECT_EQ(donor[0].id, -1);
+    EXPECT_EQ(donor[1].id, -1);
+    EXPECT_EQ(donor[2].id, -1);
+    EXPECT_EQ(recipient[0].id, 1);
+    EXPECT_EQ(recipient[1].id, 2);
+    EXPECT_EQ(recipient[2].id, 3);
+}
+
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
