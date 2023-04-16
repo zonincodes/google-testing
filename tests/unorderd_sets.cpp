@@ -76,6 +76,33 @@ TEST(StdNext, NextReturnsIteratorsAtGivenOffsets){
     auto itr3 = std::next(itr1, 4);
     EXPECT_EQ(*itr3, 0x74);
 }
+
+TEST(StdDistance, ReturnsTheNumberOfElementsBetweenIterators)
+{
+    std::vector<unsigned char> mission{
+        0x9e, 0xc4, 0xc1, 0x29,
+        0x49, 0xa4, 0xf3, 0x14,
+        0x74, 0xf2, 0x99, 0x05,
+        0x8c, 0xe2, 0xb2, 0x2a};
+    
+    auto eighth =std::next(mission.begin(), 8);
+    auto fifth = std::prev(eighth, 3);
+    EXPECT_EQ(std::distance(fifth, eighth), 3);
+}
+
+
+// std::iter_swap
+// The std::iter swap auxiliar iteratir function allows you to swap the values pointed to by two forward iterators itr and itr2:
+TEST(StdIterSwap, SwapsPointedToElemets)
+{
+    std::vector<long> easy_as{3, 2, 1};
+    std::iter_swap(easy_as.begin(), std::next(easy_as.begin(), 2));
+
+    EXPECT_EQ(easy_as[0], 1);
+    EXPECT_EQ(easy_as[1], 2);
+    EXPECT_EQ(easy_as[2], 3);
+}
+
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
