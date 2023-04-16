@@ -135,7 +135,7 @@ TEST(StdMakeMove, MoveIterators)
 
 //  Reverse Iterator Adapters
 
-TEST(ReverseIteators, CanInitializeContainers)
+TEST(ReverseIterators, CanInitializeContainers)
 {
     std::list<int> original{3, 2, 1};
     std::vector<int> easy_as{original.crbegin(), original.crend()};
@@ -144,6 +144,19 @@ TEST(ReverseIteators, CanInitializeContainers)
     EXPECT_EQ(easy_as[1], 2);
     EXPECT_EQ(easy_as[2], 3);
 }
+
+TEST(ReverseIterators, ConvertsNormalIterator)
+{
+    std::list<int> original{3, 2, 1};
+    auto begin = std::make_reverse_iterator(original.cend());
+    auto end = std::make_reverse_iterator(original.cbegin());
+    std::vector<int> easy_as{begin, end};
+
+    EXPECT_EQ(easy_as[0], 1);
+    EXPECT_EQ(easy_as[1], 2);
+    EXPECT_EQ(easy_as[2], 3);
+}
+
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
