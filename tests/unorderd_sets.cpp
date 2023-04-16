@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 #include <iterator>
 #include <deque>
+#include <list>
 #include <forward_list>
 TEST(InsertIterators, ConvertWritesIntoContainerInsertion)
 {
@@ -132,6 +133,17 @@ TEST(StdMakeMove, MoveIterators)
     EXPECT_EQ(recipient[2].id, 3);
 }
 
+//  Reverse Iterator Adapters
+
+TEST(ReverseIteators, CanInitializeContainers)
+{
+    std::list<int> original{3, 2, 1};
+    std::vector<int> easy_as{original.crbegin(), original.crend()};
+
+    EXPECT_EQ(easy_as[0], 1);
+    EXPECT_EQ(easy_as[1], 2);
+    EXPECT_EQ(easy_as[2], 3);
+}
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
