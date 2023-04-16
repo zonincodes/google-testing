@@ -57,6 +57,21 @@ TEST(StdAdvance, AdvanceModifiesInputIterators)
     std::advance(itr, -8);
     EXPECT_EQ(*itr, 0x9e);
 }
+
+
+// std::next, std::prev auxiliary iterator functions are functions templates that compute offset from given iterator. They return a new iterator
+
+TEST(StdNext, NextReturnsIteratorsAtGivenOffsets){
+    std::vector<unsigned char> mission{
+        0x9e, 0xc4, 0xc1, 0x29,
+        0x49, 0xf2, 0x99, 0x05,
+        0x74, 0xf2, 0x99, 0x05,
+        0x8c, 0xe2, 0xb2, 0x2a};
+    
+    auto itr1 = mission.begin();
+    std::advance(itr1, 4);
+    EXPECT_EQ(*itr1, 0x49);
+}
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
