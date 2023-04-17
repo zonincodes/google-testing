@@ -1,5 +1,9 @@
 #include <gtest/gtest.h>
 
+TEST(Zero, RandomTest)
+{
+    EXPECT_EQ(1, 1);
+}
 
 
 

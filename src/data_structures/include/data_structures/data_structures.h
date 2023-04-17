@@ -29,5 +29,6 @@ struct Person
         int age;
 };
 
+void ostreamTest();
 
 #endif
