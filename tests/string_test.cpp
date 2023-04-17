@@ -38,6 +38,15 @@ std::wstring for wchar_t is large enough to contain the largest charater of the 
 std::u16string for char16_t is used for character sets like UTF-16.
 std::u32string for char32_t is used for character sets like UTF_32.
 */
+
+TEST(ReplacingElements, WorksWithSubstitution)
+{
+    std::string word("substitution");
+    { 
+        word.replace(word.begin()+9, word.end(), "e");
+        EXPECT_EQ(word, "substitute");
+    }
+}
 int main (int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
