@@ -65,6 +65,39 @@ TEST(ReplacingElements, ReplaceWithIndexLengthAndString)
     word.replace(3, 6, other);
     EXPECT_EQ(word, "subversion");
 }
+
+
+TEST(Search, LocatesSubstringsFromStrings)
+{
+    using namespace std::literals::string_literals;
+    std::string word("pizzazz");
+    EXPECT_EQ(word.find("zz"s), 2);
+}
+
+TEST(Search, AccepstPositionArgument)
+{
+    using namespace std::literals::string_literals;
+    std::string word("pizzazz");
+    EXPECT_EQ(word.find("zz"s, 3), 5);
+}
+
+TEST(Search, LocatesSubStringsFromChar)
+{
+    using namespace std::literals::string_literals;
+    std::string word("pizzazz");
+    EXPECT_EQ(word.find("zaz"), 3);
+}
+
+
+
+
+
+
+
+
+
+
+
 int main (int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
