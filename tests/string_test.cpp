@@ -55,7 +55,9 @@ TEST(ReplacingElements, WorksWithSubstitution)
     }
 
     {
-        
+        std::string other("vers");
+        word.replace(3, 6, other);
+        EXPECT_EQ(word, "subversion");
     }
 }
 int main (int argc, char **argv)
