@@ -37,5 +37,5 @@ target_link_libraries(multiply_test
 add_test(ds_gtests ds_test)
 add_test(unorderd_sets unorderd_sets)
 add_test(multiply_gtests multiply_test)
-add_test(string_tests string_test)
+add_test(string_tests string_tests)
 add_test(stream_tests stream_tests)
