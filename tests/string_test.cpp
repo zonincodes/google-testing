@@ -47,6 +47,8 @@ TEST(ReplacingElements, WorksWithSubstitution)
         EXPECT_EQ(word, "substitute");
     }
 
+    
+
     {
         std::string other("innuendo");
         word.replace(word.begin(), word.begin() +3, other.begin(), other.begin()+2);
@@ -54,11 +56,16 @@ TEST(ReplacingElements, WorksWithSubstitution)
         EXPECT_EQ(word, "institution");
     }
 
-    {
-        std::string other("vers");
-        word.replace(3, 6, other);
-        EXPECT_EQ(word, "subversion");
-    }
+    
+}
+
+TEST(ReplacingElements, ReplaceWithIndexLengthAndString)
+{
+
+    std::string word = "substitution";
+    std::string other("vers");
+    word.replace(3, 6, other);
+    EXPECT_EQ(word, "subversion");
 }
 int main (int argc, char **argv)
 {
