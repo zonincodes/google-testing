@@ -104,8 +104,15 @@ TEST(Regex, SubMatchReturnsTrueGivenMatchingString)
     EXPECT_EQ(results[3], "-3173");
 }
 
+// searching
+TEST(Regex, WhenOnlyPartOfStringMAchesReges)
+{
+    std::regex reg{R"((\w{2})(\d{5})(-\d{4})?)"};
+    std::string sentence("The string NJ07936-3173 is a ZIP code.");
 
-
+    EXPECT_FALSE(std::regex_match(sentence, reg));
+    EXPECT_TRUE(std::regex_search(sentence, reg));
+}
 
 
 
