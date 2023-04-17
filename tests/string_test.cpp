@@ -114,7 +114,14 @@ TEST(Regex, WhenOnlyPartOfStringMAchesReges)
     EXPECT_TRUE(std::regex_search(sentence, reg));
 }
 
-
+// regex replacing
+TEST(Regex, RegexReplacing)
+{
+    std::regex regex{"[aeiou]"};
+    std::string phrase("queueing and cooeeing in eutopia");
+    const auto result = std::regex_replace(phrase, regex, "_");
+    EXPECT_EQ(result, "q_____ng _nd c_____ng _n __t_p__");
+}
 
 
 
