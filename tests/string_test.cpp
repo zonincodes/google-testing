@@ -13,6 +13,24 @@ TEST(StdString, SupportsRepeatedCharacters)
     EXPECT_EQ(roadside_assistance, "AAA");
 }
 
+TEST(StdString, SupportsCopyConstructing)
+{
+    std::string word("catwampus");
+    EXPECT_EQ(std::string(word), "catwampus");
+}
+
+TEST(StdString, SupportsMoveConstructing)
+{
+    std::string word("catawampus");
+    EXPECT_EQ(std::string(move(word)), "catawampus");
+}
+
+TEST(StdString, SupportsConstructingFromSubStrings)
+{
+    std::string word("catawampus");
+    EXPECT_EQ(std::string(word, 0, 3), "cat");
+    EXPECT_EQ(std::string(word, 4), "wampus");
+}
 /*
 The STL provides four basic_string specialization in the <string> header.
 std::string for char is used for large chater sets like ASCII
