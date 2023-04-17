@@ -46,6 +46,17 @@ TEST(ReplacingElements, WorksWithSubstitution)
         word.replace(word.begin()+9, word.end(), "e");
         EXPECT_EQ(word, "substitute");
     }
+
+    {
+        std::string other("innuendo");
+        word.replace(word.begin(), word.begin() +3, other.begin(), other.begin()+2);
+
+        EXPECT_EQ(word, "institution");
+    }
+
+    {
+        
+    }
 }
 int main (int argc, char **argv)
 {
