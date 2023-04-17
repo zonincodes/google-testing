@@ -1,5 +1,6 @@
 #include <string>
 #include <gtest/gtest.h>
+#include <regex>
 
 TEST(StdString, SupportsConstructingEmptyString)
 {
@@ -88,8 +89,20 @@ TEST(Search, LocatesSubStringsFromChar)
     EXPECT_EQ(word.find("zaz"), 3);
 }
 
+// Regular expression
+TEST(Regex, SubMatchReturnsTrueGivenMatchingString)
+{
+    std::regex reg{R"((\w{2})(\d{5})(-\d{4})?)"};
+    std::smatch results;
+    std::string zip("NJ07936-3173");
 
-
+    const auto matched = std::regex_match(zip, results, reg);
+    EXPECT_TRUE(matched);
+    EXPECT_EQ(results[0], "NJ07936-3173");
+    EXPECT_EQ(results[1], "NJ");
+    EXPECT_EQ(results[2], "07936");
+    EXPECT_EQ(results[3], "-3173");
+}
 
 
 
