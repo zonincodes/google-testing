@@ -50,6 +50,25 @@ TEST(AnyOf, AnyOfTheElementIsTrue)
     EXPECT_FALSE(any_of(words.cbegin(), words.cend(), is_empty));
 }
 
+// none_of 
+// The none_of algorith determines whether noelemnt in a sequence meets some user-specified criteria.
+
+TEST(NoneOf, NoElementsInSequence)
+{
+    vector<string> words{"Carmel", "on", "the", "ceiling"};
+
+    const auto is_hump_day = [](const auto& word){
+        return word == "hump day";
+    };
+
+    EXPECT_TRUE(none_of(words.cbegin(), words.cend(), is_hump_day));
+
+    const auto is_definate_article =[](const auto& word){
+        return word == "the" || word == "ye";
+    };
+
+    EXPECT_FALSE(none_of(words.cbegin(), words.cend(), is_definate_article));
+}
 
 int main(int argc, char** argv)
 {
