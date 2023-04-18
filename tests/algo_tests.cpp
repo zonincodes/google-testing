@@ -115,8 +115,30 @@ TEST(Find, FindFindIfFindIfNot)
     EXPECT_EQ(*find_if_not_result, words.front());
 }
 
+// find_end
+
+TEST(FindEnd, ComplexityQuadratic)
+{
+    vector<string> words1 {"Goat", "girl", "googoo", "goggles" };
+    vector<string> words2 {"girl", "googoo"};
+
+    const auto find_end_result1 = find_end(words1.cbegin(), words1.cend(), words2.cbegin(), words2.cend());
+
+    EXPECT_EQ(*find_end_result1, words1[1]);
+
+    const auto has_length = [](const auto& word, const auto& len){
+        return word.length() == len;
+    };
+
+    vector<size_t> sizes{4, 6};
+    const auto find_end_result2 = find_end(words1.cbegin(), words1.cend(), sizes.cbegin(), sizes.cend(), has_length);
+
+    EXPECT_EQ(*find_end_result2, words1[1]);
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
+
