@@ -154,7 +154,23 @@ TEST(AdjacentFind, FindFirstRepeat)
     };
     const auto adjacent_find_result = adjacent_find(words.cbegin(), words.cend(), first_letters_match);
     
-    EXPECT_EQ(*adjacent_find_result, words[1]);ad
+    EXPECT_EQ(*adjacent_find_result, words[1]);
+}
+
+//count algorithm
+TEST(Count, SumOfElemMatchingCriteria)
+{
+    vector<string> words{"jelly", "jar", "and", "jam"};
+    const auto n_ands = count(words.cbegin(), words.cend(), "and");
+    EXPECT_EQ(n_ands, 1);
+
+    const auto contains_a = [](const auto& word){
+        return word.find('a') != string::npos;
+    };
+
+    const auto count_if_result = count_if(words.cbegin(), words.cend(), contains_a);
+
+    EXPECT_EQ(count_if_result, 3);
 }
 
 // main
