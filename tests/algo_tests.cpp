@@ -102,6 +102,15 @@ TEST(Find, FindFindIfFindIfNot)
     vector<string>words{"fiffer", "feffer", "feff"};
     const auto find_result = find(words.cbegin(), words.cend(), "feff");
     EXPECT_EQ(*find_result, words.back());
+
+    //find_if
+    const auto defends_digital_privacy = [](const auto& word){
+        return string::npos != word.find("eff");
+    };
+    const auto find_if_result = find_if(words.cbegin(), words.cend(), defends_digital_privacy);
+    EXPECT_EQ(*find_if_result, "feffer");
+
+    // const auto 
 }
 
 int main(int argc, char** argv)
