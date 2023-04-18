@@ -136,6 +136,14 @@ TEST(FindEnd, ComplexityQuadratic)
     EXPECT_EQ(*find_end_result2, words1[1]);
 }
 
+TEST(FindFirst, QuadraticComplexity)
+{
+    vector<string> words{"Hen", "in", "a", "hat"};
+    vector<string> indefinite_articles{"a", "an"};
+    const auto find_first_of_result = find_first_of(words.cbegin(), words.cend(), indefinite_articles.cbegin(), indefinite_articles.cend());
+    EXPECT_EQ(*find_first_of_result, words[2]);
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
