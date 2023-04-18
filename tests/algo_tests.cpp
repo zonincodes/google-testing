@@ -182,6 +182,20 @@ TEST(Mismatch, Elem1MatchesElem2)
 
    EXPECT_EQ(*mismatch_result1.first, "Kangaroo");
    EXPECT_EQ(*mismatch_result1.second, "bandicoot");
+
+   const auto second_letter_matches = [](const auto& word1, const auto& word2){
+    if(word1.size() < 2)
+        return false;
+    if (word1.size() < 2)
+        return false;
+    return word1[1] == word2[1];
+
+   };
+
+   const auto mismatch_result2 = mismatch(words1.cbegin(), words1.cend(), words2.cbegin(), second_letter_matches);
+
+   EXPECT_EQ(*mismatch_result2.first, "Kick");
+   EXPECT_EQ(*mismatch_result2.second, "roundhouse");
 }
 // main
 int main(int argc, char** argv)
