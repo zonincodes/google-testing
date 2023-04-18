@@ -70,6 +70,21 @@ TEST(NoneOf, NoElementsInSequence)
     EXPECT_FALSE(none_of(words.cbegin(), words.cend(), is_definate_article));
 }
 
+// for_each
+
+TEST(ForEach, AppliesSomeUserDefinedFunction)
+{
+    vector<string> words{"David", "Donald", "Doo"};
+    size_t number_of_Ds{};
+    const auto count_Ds = [&number_of_Ds](const auto& word){
+        if(word.empty()) return;
+        if(word[0] == 'D') ++number_of_Ds;
+    };
+
+    for_each(words.cbegin(), words.cend(), count_Ds);
+    EXPECT_EQ(number_of_Ds, 3);
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
