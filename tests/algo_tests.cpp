@@ -143,7 +143,21 @@ TEST(FindFirst, QuadraticComplexity)
     const auto find_first_of_result = find_first_of(words.cbegin(), words.cend(), indefinite_articles.cbegin(), indefinite_articles.cend());
     EXPECT_EQ(*find_first_of_result, words[2]);
 }
+// adjacent find
+// finds the first repeat in a sequnce
+TEST(AdjacentFind, FindFirstRepeat)
+{
+    vector<string> words{"Icabod", "is", "itchy"};
+    const auto first_letters_match = [](const auto& word1, const auto& word2){
+        if(word1.empty() || word2.empty()) return false;
+        return word1.front() == word2.front();
+    };
+    const auto adjacent_find_result = adjacent_find(words.cbegin(), words.cend(), first_letters_match);
+    
+    EXPECT_EQ(*adjacent_find_result, words[1]);ad
+}
 
+// main
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
