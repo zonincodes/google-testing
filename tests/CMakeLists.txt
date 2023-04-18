@@ -14,6 +14,7 @@ add_executable(ds_test ds_test.cpp)
 add_executable(unorderd_sets unorderd_sets.cpp)
 add_executable(string_tests string_test.cpp)
 add_executable(stream_tests stream_tests.cpp)
+add_executable(filesystems_tests filesystems_test.cpp)
 target_link_libraries(multiply_test
  PRIVATE
   GTest::GTest
@@ -28,6 +29,9 @@ target_link_libraries(multiply_test
   GTest::GTest
   )
 
+  target_link_libraries(filesystems_tests PRIVATE GTest::GTest)
+
+
   target_link_libraries(stream_tests PRIVATE GTest::GTest)
 
   target_link_libraries(string_tests
@@ -39,3 +43,4 @@ add_test(unorderd_sets unorderd_sets)
 add_test(multiply_gtests multiply_test)
 add_test(string_tests string_tests)
 add_test(stream_tests stream_tests)
+add_test(filesystems_tests filesystems_tests)
