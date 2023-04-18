@@ -85,6 +85,18 @@ TEST(ForEach, AppliesSomeUserDefinedFunction)
     EXPECT_EQ(number_of_Ds, 3);
 }
 
+TEST(ForEachN, AlgoAppliesSomeUserDefinedFunctionToElem)
+{
+    vector<string> words{"ear", "egg", "elephant"};
+    size_t characters{};
+    const auto count_characters = [&characters](const auto& word){
+        characters += word.size();
+    };
+
+    for_each_n(words.cbegin(), words.size(), count_characters);
+    EXPECT_EQ(characters, 14);
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
