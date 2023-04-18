@@ -97,6 +97,13 @@ TEST(ForEachN, AlgoAppliesSomeUserDefinedFunctionToElem)
     EXPECT_EQ(characters, 14);
 }
 
+TEST(Find, FindFindIfFindIfNot)
+{
+    vector<string>words{"fiffer", "feffer", "feff"};
+    const auto find_result = find(words.cbegin(), words.cend(), "feff");
+    EXPECT_EQ(*find_result, words.back());
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
