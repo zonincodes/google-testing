@@ -110,7 +110,9 @@ TEST(Find, FindFindIfFindIfNot)
     const auto find_if_result = find_if(words.cbegin(), words.cend(), defends_digital_privacy);
     EXPECT_EQ(*find_if_result, "feffer");
 
-    // const auto 
+    const auto find_if_not_result = find_if_not(words.cbegin(), words.cend(), defends_digital_privacy);
+
+    EXPECT_EQ(*find_if_not_result, words.front());
 }
 
 int main(int argc, char** argv)
