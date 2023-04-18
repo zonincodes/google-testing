@@ -173,6 +173,16 @@ TEST(Count, SumOfElemMatchingCriteria)
     EXPECT_EQ(count_if_result, 3);
 }
 
+// mismatch
+TEST(Mismatch, Elem1MatchesElem2)
+{
+   vector<string> words1{"Kitten", "Kangaroo", "Kick"};
+   vector<string> words2{"Kitten", "bandicoot", "roundhouse"};  
+   const auto mismatch_result1 = mismatch(words1.cbegin(), words1.cend(), words2.cbegin(), words2.cend());
+
+   EXPECT_EQ(*mismatch_result1.first, "Kangaroo");
+   EXPECT_EQ(*mismatch_result1.second, "bandicoot");
+}
 // main
 int main(int argc, char** argv)
 {
