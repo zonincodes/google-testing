@@ -234,6 +234,33 @@ TEST(MutatingSequenceOperation, CopyBackward)
     EXPECT_TRUE(words1 == expected);
 }
 
+// Move
+// Moves one sequence inot another.
+// examples
+
+struct MoveDetector {
+    MoveDetector() : owner{ true} {}
+    MoveDetector(const MoveDetector&) = delete;
+    MoveDetector& operator=(const MoveDetector&& o) = delete;
+    MoveDetector& operator=(MoveDetector&& o){
+        o.owner = false;
+        owner = true;
+        return *this;
+    }
+    bool owner;
+};
+
+TEST(MutatingSequenceOperation, Move)
+{
+    vector<MoveDetector> detectors1(2);
+    vector<MoveDetector> detectors2(2);
+    move(detectors1.begin(), detectors1.end(), detectors2.begin());
+
+    EXPECT_FALSE(detectors1[0].owner);
+    EXPECT_FALSE(detectors1[1].owner);
+    EXPECT_TRUE(detectors2[0].owner);
+    EXPECT_TRUE(detectors2[1].owner);
+}
 
 
 
