@@ -273,6 +273,19 @@ TEST(MutatingSequenceOperation, MoveBackward)
     EXPECT_TRUE(detectors2[1].owner);
 }
 
+//  swap_ranges
+TEST(MutatingSequenceOperation, SwapRanges)
+{
+    vector<string> words1{"The", "king", "is", "dead."};
+    vector<string> words2{"Long", "live", "the", "king."};
+    vector<string> expected1 = words2;
+    vector<string> expected2 = words1;
+
+    swap_ranges(words1.begin(), words1.end(), words2.begin());
+    EXPECT_EQ(words1, expected1);
+    EXPECT_EQ(words2, expected2);
+}
+
 // main
 int main(int argc, char** argv)
 {
