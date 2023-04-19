@@ -219,6 +219,25 @@ TEST(MutatingSequenceOperation, CopnN)
     vector<string> expected{"I'm", "a", "leaf", "on", "the","wind"};
     EXPECT_EQ(words2, expected);
 }
+
+// copy_backword
+// copies the reverse of one sequence into another
+// linear complecity
+
+TEST(MutatingSequenceOperation, CopyBackward)
+{
+    vector<string> words1{"A", "man", "a", "plan", "a", "bran", "muffin"};
+    vector<string> words2{"a", "canal", "Panama"};
+    const auto result = copy_backward(words2.cbegin(), words2.cend(), words1.end());
+    vector<string> expected{"A", "man", "a", "plan", "a", "canal", "Panama"};
+
+    EXPECT_TRUE(words1 == expected);
+}
+
+
+
+
+
 // main
 int main(int argc, char** argv)
 {
