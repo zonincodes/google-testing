@@ -452,6 +452,18 @@ TEST(PartitionedAlgorithms, IsPartitioned)
     EXPECT_FALSE(is_partitioned(numbers2.begin(), numbers2.end(), is_odd));
 }
 
+//  *************** partition **************
+TEST(PartitionedAlgorithms, Partition) // complexity linear
+{
+    auto is_odd = [] (auto x) { return  x % 2 == 1; };
+    vector<int> numbers{ 1, 2, 3, 4, 5};
+
+    const auto partition_point = partition(numbers.begin(), numbers.end(), is_odd);
+
+    EXPECT_TRUE(is_partitioned(numbers.begin(), numbers.end(), is_odd));
+    EXPECT_TRUE(partition_point == numbers.begin() + 3); 
+}
+
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
