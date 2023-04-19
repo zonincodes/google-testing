@@ -533,6 +533,15 @@ TEST(ExtremeValueAlgorithms, MinAndMaxElement)
     EXPECT_TRUE(*result.first == "deed");
     EXPECT_TRUE(*result.second == "malayalam");
 }
+
+//  ********* clump **********
+
+TEST(ExtremeValueAlgorithms, Clamp)
+{
+    EXPECT_TRUE(clamp(9000, 0, 100) == 100);
+    EXPECT_TRUE(clamp(-123, 0, 100) == 0);
+}
+
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
