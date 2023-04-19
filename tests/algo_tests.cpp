@@ -3,7 +3,10 @@
 #include <string>
 #include <algorithm>
 #include <functional>
+#include <array>
+#include <numeric>
 using namespace std;
+
 
 
 
@@ -553,24 +556,15 @@ TEST(NumericOperations, Plus)
     EXPECT_TRUE(3 == plus<short>{}(1, 2));
 }
 
+TEST(NumericOperations, Iota)
+{
+    array<int, 3> easy_as;
+    iota(easy_as.begin(), easy_as.end(), 2);
+    // for(int i = 0; i < easy_as.size(); i++)
+    //     cout << easy_as[i] << '\n';
+    EXPECT_TRUE(easy_as == (array<int, 3>{2, 3, 4}));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 // *************************** main ***************************
 int main(int argc, char** argv)
