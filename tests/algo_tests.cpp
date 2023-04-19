@@ -317,6 +317,46 @@ TEST(SortingAndRelatedOperations, Sort) // quasilinear complexity
     EXPECT_TRUE(goat_grass == expected);
 }
 
+// stable sort
+
+enum class CharCategory{
+    Ascender,
+    Normal,
+    Descender
+};
+
+CharCategory categorize(char x)
+{
+    switch(x){
+        case 'g':
+        case 'j':
+        case 'p':
+        case 'q':
+        case 'y':
+            return CharCategory::Descender;
+        case 'b':
+        case 'd':
+        case 'f':
+        case 'h':
+        case 'k':
+        case 'l':
+        case 't':
+            return CharCategory::Ascender;
+        }
+    return CharCategory::Normal;
+}
+
+bool ascension_compare(char x, char y){
+    return categorize(x) < categorize(y);
+}
+
+TEST(SortingAndRelatedOperations, StableSort)
+{
+    string word{"outgrin"};
+    stable_sort(word.begin(), word.end(), ascension_compare);
+    string expected{"touring"};
+    EXPECT_EQ(word, expected);
+}
 
 // main
 int main(int argc, char** argv)
