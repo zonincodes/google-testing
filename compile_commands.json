@@ -1,32 +1,72 @@
 [
 {
+  "directory": "/home/pseudo/cpp-repos/g-test/build",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -I/home/pseudo/cpp-repos/g-test/src/data_structures/include -g -std=c++17 -o CMakeFiles/main.dir/main.cpp.o -c /home/pseudo/cpp-repos/g-test/main.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/main.cpp"
+},
+{
   "directory": "/home/pseudo/cpp-repos/g-test/build/src/multiply",
-  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test/src/multiply/include -g -std=c++17 -o CMakeFiles/multiply.dir/multiply.cpp.o -c /home/pseudo/cpp-repos/g-test/src/multiply/multiply.cpp",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -I/home/pseudo/cpp-repos/g-test/src/multiply/include -g -std=c++17 -o CMakeFiles/multiply.dir/multiply.cpp.o -c /home/pseudo/cpp-repos/g-test/src/multiply/multiply.cpp",
   "file": "/home/pseudo/cpp-repos/g-test/src/multiply/multiply.cpp"
 },
 {
+  "directory": "/home/pseudo/cpp-repos/g-test/build/src/data_structures",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -I/home/pseudo/cpp-repos/g-test/src/data_structures/include -g -std=c++17 -o CMakeFiles/data_structures.dir/data_structures.cpp.o -c /home/pseudo/cpp-repos/g-test/src/data_structures/data_structures.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/src/data_structures/data_structures.cpp"
+},
+{
   "directory": "/home/pseudo/cpp-repos/g-test/build/tests",
-  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test/src/multiply/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/multiply_test.dir/multiply_test.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/multiply_test.cpp",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -I/home/pseudo/cpp-repos/g-test/src/multiply/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/multiply_test.dir/multiply_test.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/multiply_test.cpp",
   "file": "/home/pseudo/cpp-repos/g-test/tests/multiply_test.cpp"
 },
 {
+  "directory": "/home/pseudo/cpp-repos/g-test/build/tests",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -I/home/pseudo/cpp-repos/g-test/src/data_structures/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/ds_test.dir/ds_test.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/ds_test.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/tests/ds_test.cpp"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/tests",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/unorderd_sets.dir/unorderd_sets.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/unorderd_sets.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/tests/unorderd_sets.cpp"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/tests",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/string_tests.dir/string_test.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/string_test.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/tests/string_test.cpp"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/tests",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/stream_tests.dir/stream_tests.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/stream_tests.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/tests/stream_tests.cpp"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/tests",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/filesystems_tests.dir/filesystems_test.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/filesystems_test.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/tests/filesystems_test.cpp"
+},
+{
+  "directory": "/home/pseudo/cpp-repos/g-test/build/tests",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -std=c++17 -o CMakeFiles/algo_tests.dir/algo_tests.cpp.o -c /home/pseudo/cpp-repos/g-test/tests/algo_tests.cpp",
+  "file": "/home/pseudo/cpp-repos/g-test/tests/algo_tests.cpp"
+},
+{
   "directory": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/include -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/include -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
   "file": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock-all.cc"
 },
 {
   "directory": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-build/googlemock",
-  "command": "/usr/bin/g++  -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
   "file": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googlemock/src/gmock_main.cc"
 },
 {
   "directory": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-build/googletest",
-  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -I/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest-all.cc",
   "file": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest-all.cc"
 },
 {
   "directory": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-build/googletest",
-  "command": "/usr/bin/g++  -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "command": "/usr/bin/g++  -I/home/pseudo/cpp-repos/g-test -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/include -isystem /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest -g -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++17 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest_main.cc",
   "file": "/home/pseudo/cpp-repos/g-test/build/_deps/googletest-src/googletest/src/gtest_main.cc"
 }
 ]
