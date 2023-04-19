@@ -436,7 +436,21 @@ TEST(BinarySearch, BinarySearch)
     EXPECT_FALSE(binary_search(numbers.begin(), numbers.end(), 7));
 }
 
+// ################Partitioning Algorithms ################
 
+//  *********** is_partitioned *************
+
+
+TEST(PartitionedAlgorithms, IsPartitioned)
+{
+    auto is_odd = [](auto x) {return x %2 == 1; };
+
+    vector<int> numbers1{ 9, 5, 9, 6, 4, 2};
+    EXPECT_TRUE(is_partitioned(numbers1.begin(), numbers1.end(), is_odd));
+
+    vector<int> numbers2{9, 4, 9, 6, 4, 2};
+    EXPECT_FALSE(is_partitioned(numbers2.begin(), numbers2.end(), is_odd));
+}
 
 // *************************** main ***************************
 int main(int argc, char** argv)
