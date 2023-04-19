@@ -286,6 +286,28 @@ TEST(MutatingSequenceOperation, SwapRanges)
     EXPECT_EQ(words2, expected2);
 }
 
+// Replace
+
+TEST(MutatingSequenceOperation, Replace)
+{
+    using namespace std::literals;
+    vector<string> words1{"There", "is", "no", "try"};
+    replace(words1.begin(), words1.end(), "try"sv, "spoon"sv);
+    vector<string> expected1{"There", "is", "no", "spoon"};
+    EXPECT_EQ(words1, expected1);
+
+    const vector<string> words2{"There", "is", "no", "spoon"};
+    vector<string> words3{"There", "is", "no", "spoon"};
+    auto has_two_os = [](const auto& x){
+        return count(x.begin(), x.end(), 'o') == 2;
+    };
+
+    replace_copy_if(words2.begin(), words2.end(), words3.begin(), has_two_os, "try"sv);
+
+    vector<string> expected2{"There", "is",  "no", "try"};
+    EXPECT_EQ(words3, expected2);
+}
+
 // main
 int main(int argc, char** argv)
 {
