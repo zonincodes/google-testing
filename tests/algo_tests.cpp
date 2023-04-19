@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <functional>
 using namespace std;
 
 
@@ -541,6 +542,35 @@ TEST(ExtremeValueAlgorithms, Clamp)
     EXPECT_TRUE(clamp(9000, 0, 100) == 100);
     EXPECT_TRUE(clamp(-123, 0, 100) == 0);
 }
+
+// ******** Numeric Operations *************
+
+
+TEST(NumericOperations, Plus)
+{
+    plus<short> adder;
+    EXPECT_TRUE(3 == adder(1, 2));
+    EXPECT_TRUE(3 == plus<short>{}(1, 2));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // *************************** main ***************************
 int main(int argc, char** argv)
