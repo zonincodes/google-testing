@@ -408,7 +408,18 @@ TEST(BinarySearch, LowerBound)
     EXPECT_TRUE(result == numbers.begin() + 2);
 }
 
-// main
+// ************************* upper_bound *****************
+TEST(BinarySearch, UppeBound)
+{
+    vector<int> numbers{2, 4, 5, 6, 6, 9};
+    const auto result = upper_bound(numbers.begin(), numbers.end(), 5);
+    EXPECT_TRUE(result == numbers.begin() + 3);
+}
+
+
+
+
+// *************************** main ***************************
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
