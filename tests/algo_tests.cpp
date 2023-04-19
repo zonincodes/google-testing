@@ -209,7 +209,16 @@ TEST(MutatingSequenceOperation, Copy) // linear complecity
     EXPECT_EQ(words2, expected);
 }
 
+// copy n
+TEST(MutatingSequenceOperation, CopnN)
+{
+    vector<string> words1{"on", "the", "wind"};
+    vector<string> words2{"I'm", "a", "leaf"};
 
+    copy_n(words1.cbegin(), words1.size(), back_inserter(words2));
+    vector<string> expected{"I'm", "a", "leaf", "on", "the","wind"};
+    EXPECT_EQ(words2, expected);
+}
 // main
 int main(int argc, char** argv)
 {
