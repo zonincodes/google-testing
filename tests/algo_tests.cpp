@@ -399,6 +399,15 @@ TEST(SortingAndRelatedOperations, NthSearch)
 
 }
 
+// binary search
+// ****************** lower_bound *********************
+TEST(BinarySearch, LowerBound)
+{
+    vector<int> numbers{2, 4, 5, 6, 6, 9 };
+    const auto result = lower_bound(numbers.begin(), numbers.end(), 5);
+    EXPECT_TRUE(result == numbers.begin() + 2);
+}
+
 // main
 int main(int argc, char** argv)
 {
