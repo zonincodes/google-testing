@@ -358,6 +358,20 @@ TEST(SortingAndRelatedOperations, StableSort)
     EXPECT_EQ(word, expected);
 }
 
+TEST(SortingAndRelatedOperations, PartialSort)
+{
+    string word1{"nectarous"};
+    partial_sort(word1.begin(), word1.begin() + 4, word1.end());
+    string expected1 = "acentrous";
+    EXPECT_EQ(word1, expected1);
+
+    string word2{"pretanning"};
+    partial_sort(word2.begin(), word2.begin() + 3, word2.end(), ascension_compare);
+    string expected2{"trepanning"};
+    EXPECT_EQ(word2, expected2);
+    
+}
+
 // main
 int main(int argc, char** argv)
 {
