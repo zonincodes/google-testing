@@ -383,6 +383,22 @@ TEST(SortingAndRelatedOperations, IsSorted)
     EXPECT_EQ(word2.end(), expected);
 }
 
+// nth_element
+// places  a particular element in a sequence into its correct sorted position.
+
+TEST(SortingAndRelatedOperations, NthSearch)
+{
+    vector<int> numbers{1, 9, 2, 8, 3, 7, 4, 6, 5};
+    nth_element(numbers.begin(), numbers.begin() + 5, numbers.end());   
+    auto less_than_6th_elem = [&elem = numbers[5]](int x){
+      return x < elem;
+    };
+
+    EXPECT_TRUE(all_of(numbers.begin(), numbers.begin() + 5, less_than_6th_elem));
+    EXPECT_EQ(numbers[5], 6);
+
+}
+
 // main
 int main(int argc, char** argv)
 {
