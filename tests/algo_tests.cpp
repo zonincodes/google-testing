@@ -499,6 +499,24 @@ TEST(MergeAlgorithms, Merge)
 
 }
 
+// ########### ExtremeValueAlgorithms ############
+// ************** min and max ***********
+TEST(ExtremeValueAlgorithms, MinAndMAx)
+{
+    auto length_comapare = [](const auto& x1, const auto& x2){
+        return x1.length() < x2.length();
+    };
+
+    EXPECT_EQ(min("undiscriminativeness"s, "vermin"s, length_comapare), "vermin");
+
+    EXPECT_EQ(max("maxim"s, "ultramaximal"s, length_comapare), "ultramaximal");
+
+    const auto result = minmax("minimaxes"s, "maximin"s, length_comapare);
+
+    EXPECT_EQ(result.first, "maximin");
+    EXPECT_EQ(result.second, "minimaxes");
+
+}
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
