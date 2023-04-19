@@ -517,6 +517,22 @@ TEST(ExtremeValueAlgorithms, MinAndMAx)
     EXPECT_EQ(result.second, "minimaxes");
 
 }
+
+TEST(ExtremeValueAlgorithms, MinAndMaxElement)
+{
+    auto length_compare = [](const auto &x1, const auto &x2){
+        return x1.length() < x2.length();
+    };
+
+    vector<string>words{"civic", "deed", "kayak", "malayalam"};
+    EXPECT_TRUE(*min_element(words.begin(), words.end(), length_compare) == "deed");
+    EXPECT_TRUE(*max_element(words.begin(), words.end(), length_compare) == "malayalam");
+
+    const auto result = minmax_element(words.begin(), words.end(), length_compare);
+
+    EXPECT_TRUE(*result.first == "deed");
+    EXPECT_TRUE(*result.second == "malayalam");
+}
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
