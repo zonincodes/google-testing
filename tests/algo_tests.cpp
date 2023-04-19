@@ -476,6 +476,16 @@ TEST(PartitionedAlgorithms, PartitionCopy)
     EXPECT_TRUE(none_of(evens.begin(), evens.end(), is_odd));
 }
 
+// ****************** stable_partition *************
+TEST(PartitionedAlgorithms, StablePartion)
+{
+    auto is_odd = [](auto x) {return x % 2 == 1; };
+    vector<int> numbers{ 1, 2, 3, 4, 5 };
+    stable_partition(numbers.begin(), numbers.end(), is_odd);
+
+    EXPECT_TRUE(numbers ==  (vector<int>{1, 3, 5, 2, 4}));
+}
+
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
