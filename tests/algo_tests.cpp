@@ -262,8 +262,16 @@ TEST(MutatingSequenceOperation, Move)
     EXPECT_TRUE(detectors2[1].owner);
 }
 
-
-
+TEST(MutatingSequenceOperation, MoveBackward)
+{
+    vector<MoveDetector> detectors1(2);
+    vector<MoveDetector> detectors2(2);
+    move_backward(detectors1.begin(), detectors1.end(), detectors2.end());
+    EXPECT_FALSE(detectors1[0].owner);
+    EXPECT_FALSE(detectors1[1].owner);
+    EXPECT_TRUE(detectors2[0].owner);
+    EXPECT_TRUE(detectors2[1].owner);
+}
 
 // main
 int main(int argc, char** argv)
