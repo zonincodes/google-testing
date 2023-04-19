@@ -464,6 +464,18 @@ TEST(PartitionedAlgorithms, Partition) // complexity linear
     EXPECT_TRUE(partition_point == numbers.begin() + 3); 
 }
 
+
+//  ************* partition_copy ********************
+TEST(PartitionedAlgorithms, PartitionCopy)
+{
+    auto is_odd = [](auto x) {return x % 2 == 1;};
+    vector<int> numbers{1, 2, 3, 4, 5}, odds, evens;
+    partition_copy(numbers.begin(), numbers.end(), back_inserter(odds), back_inserter(evens), is_odd);
+
+    EXPECT_TRUE(all_of(odds.begin(), odds.end(), is_odd));
+    EXPECT_TRUE(none_of(evens.begin(), evens.end(), is_odd));
+}
+
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
