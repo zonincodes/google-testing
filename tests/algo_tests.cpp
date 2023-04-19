@@ -7,7 +7,7 @@ using namespace std;
 
 
 // all of test
-TEST(AllOf, AllOf)
+TEST(NonModifyingSequenceOperations, AllOf)
 {
     vector<string> words{"Auntie", "Anne's", "alligator"};
 
@@ -33,7 +33,7 @@ TEST(AllOf, AllOf)
 
 // the algorithm returns false if the target sequnce is empty or if pred s true for any element;
 
-TEST(AnyOf, AnyOfTheElementIsTrue)
+TEST(NonModifyingSequenceOperations, AnyOf)
 {
     vector<string> words{"Barber", "baby", "bubbles"};
 
@@ -53,7 +53,7 @@ TEST(AnyOf, AnyOfTheElementIsTrue)
 // none_of 
 // The none_of algorith determines whether noelemnt in a sequence meets some user-specified criteria.
 
-TEST(NoneOf, NoElementsInSequence)
+TEST(NonModifyingSequenceOperations, NoneOf)
 {
     vector<string> words{"Carmel", "on", "the", "ceiling"};
 
@@ -72,7 +72,7 @@ TEST(NoneOf, NoElementsInSequence)
 
 // for_each
 
-TEST(ForEach, AppliesSomeUserDefinedFunction)
+TEST(NonModifyingSequenceOperations, ForEach)
 {
     vector<string> words{"David", "Donald", "Doo"};
     size_t number_of_Ds{};
@@ -85,7 +85,7 @@ TEST(ForEach, AppliesSomeUserDefinedFunction)
     EXPECT_EQ(number_of_Ds, 3);
 }
 
-TEST(ForEachN, AlgoAppliesSomeUserDefinedFunctionToElem)
+TEST(NonModifyingSequenceOperations, ForEachN)
 {
     vector<string> words{"ear", "egg", "elephant"};
     size_t characters{};
@@ -97,7 +97,7 @@ TEST(ForEachN, AlgoAppliesSomeUserDefinedFunctionToElem)
     EXPECT_EQ(characters, 14);
 }
 
-TEST(Find, FindFindIfFindIfNot)
+TEST(NonModifyingSequenceOperations, FindFindIfFindIfNot)
 {
     vector<string>words{"fiffer", "feffer", "feff"};
     const auto find_result = find(words.cbegin(), words.cend(), "feff");
@@ -117,7 +117,7 @@ TEST(Find, FindFindIfFindIfNot)
 
 // find_end
 
-TEST(FindEnd, ComplexityQuadratic)
+TEST(NonModifyingSequenceOperations, FindEnd)
 {
     vector<string> words1 {"Goat", "girl", "googoo", "goggles" };
     vector<string> words2 {"girl", "googoo"};
@@ -136,7 +136,7 @@ TEST(FindEnd, ComplexityQuadratic)
     EXPECT_EQ(*find_end_result2, words1[1]);
 }
 
-TEST(FindFirst, QuadraticComplexity)
+TEST(NonModifyingSequenceOperations, FindFirst)
 {
     vector<string> words{"Hen", "in", "a", "hat"};
     vector<string> indefinite_articles{"a", "an"};
@@ -145,7 +145,7 @@ TEST(FindFirst, QuadraticComplexity)
 }
 // adjacent find
 // finds the first repeat in a sequnce
-TEST(AdjacentFind, FindFirstRepeat)
+TEST(NonModifyingSequenceOperations, FindFirstRepeat)
 {
     vector<string> words{"Icabod", "is", "itchy"};
     const auto first_letters_match = [](const auto& word1, const auto& word2){
@@ -158,7 +158,7 @@ TEST(AdjacentFind, FindFirstRepeat)
 }
 
 //count algorithm
-TEST(Count, SumOfElemMatchingCriteria)
+TEST(NonModifyingSequenceOperations, Count)
 {
     vector<string> words{"jelly", "jar", "and", "jam"};
     const auto n_ands = count(words.cbegin(), words.cend(), "and");
@@ -174,7 +174,7 @@ TEST(Count, SumOfElemMatchingCriteria)
 }
 
 // mismatch
-TEST(Mismatch, Elem1MatchesElem2)
+TEST(NonModifyingSequenceOperations, Mismatch)
 {
    vector<string> words1{"Kitten", "Kangaroo", "Kick"};
    vector<string> words2{"Kitten", "bandicoot", "roundhouse"};  
