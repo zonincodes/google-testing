@@ -358,6 +358,7 @@ TEST(SortingAndRelatedOperations, StableSort)
     EXPECT_EQ(word, expected);
 }
 
+// partialSort
 TEST(SortingAndRelatedOperations, PartialSort)
 {
     string word1{"nectarous"};
@@ -370,6 +371,16 @@ TEST(SortingAndRelatedOperations, PartialSort)
     string expected2{"trepanning"};
     EXPECT_EQ(word2, expected2);
     
+}
+
+// is_sorted - determines whether a sequence is sorted.
+TEST(SortingAndRelatedOperations, IsSorted)
+{
+    string word1{"billowy"};
+    EXPECT_TRUE(is_sorted(word1.begin(), word1.end()));
+    string word2{"floppy"};
+    auto expected = is_sorted_until(word2.begin(), word2.end(), ascension_compare);
+    EXPECT_EQ(word2.end(), expected);
 }
 
 // main
