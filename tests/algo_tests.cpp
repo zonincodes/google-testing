@@ -416,6 +416,25 @@ TEST(BinarySearch, UppeBound)
     EXPECT_TRUE(result == numbers.begin() + 3);
 }
 
+// *********************** equal_range *******************
+// return a std::pair of iterators corresponding to the 
+// half-open range equal to value.
+
+TEST(BinarySearch, EqualRange)
+{
+    vector<int> numbers{ 2, 4, 5, 6, 6, 9};
+    const auto [rbeg, rend] = equal_range(numbers.begin(), numbers.end(), 6);
+    EXPECT_TRUE(rbeg == (numbers.begin() + 3));
+}
+
+// ***************************** binary_search ********************/
+
+TEST(BinarySearch, BinarySearch)
+{
+    vector<int> numbers{2, 4, 5, 6, 6, 9};
+    EXPECT_TRUE(binary_search(numbers.begin(), numbers.end(), 6));
+    EXPECT_FALSE(binary_search(numbers.begin(), numbers.end(), 7));
+}
 
 
 
