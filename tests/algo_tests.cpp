@@ -197,6 +197,19 @@ TEST(Mismatch, Elem1MatchesElem2)
    EXPECT_EQ(*mismatch_result2.first, "Kick");
    EXPECT_EQ(*mismatch_result2.second, "roundhouse");
 }
+// Mutating Sequence operation
+// is an algorithm that performs computation over a sequence and is allowed to modify the sequence in some way
+TEST(MutatingSequenceOperation, Copy) // linear complecity
+{
+    vector<string> words1{ "and", "prosper"};
+    vector<string> words2{"Live", "long"};
+
+    copy(words1.cbegin(), words1.cend(), back_inserter(words2));
+    vector<string> expected {"Live", "long", "and", "prosper"};
+    EXPECT_EQ(words2, expected);
+}
+
+
 // main
 int main(int argc, char** argv)
 {
