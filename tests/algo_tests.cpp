@@ -486,10 +486,22 @@ TEST(PartitionedAlgorithms, StablePartion)
     EXPECT_TRUE(numbers ==  (vector<int>{1, 3, 5, 2, 4}));
 }
 
+//  ############# Merging Algorithms ###############
+
+// ***************** merge ***************
+
+TEST(MergeAlgorithms, Merge)
+{
+    vector<int> numbers1{ 1, 4, 5}, numbers2{ 2, 3, 3, 6 }, expected{1, 2, 3, 3, 4, 5, 6}, result;
+    merge(numbers1.begin(), numbers1.end(), numbers2.begin(), numbers2.end(), back_inserter(result));
+
+    EXPECT_EQ(result, expected);
+
+}
+
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-
