@@ -308,6 +308,16 @@ TEST(MutatingSequenceOperation, Replace)
     EXPECT_EQ(words3, expected2);
 }
 
+// Sorting and relatated Opearations
+TEST(SortingAndRelatedOperations, Sort) // quasilinear complexity
+{
+    string goat_grass{"spoilage"};
+    sort(goat_grass.begin(), goat_grass.end());
+    string expected{"aegilops"};
+    EXPECT_TRUE(goat_grass == expected);
+}
+
+
 // main
 int main(int argc, char** argv)
 {
