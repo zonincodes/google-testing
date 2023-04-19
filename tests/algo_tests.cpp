@@ -566,6 +566,19 @@ TEST(NumericOperations, Iota)
 
 }
 
+TEST(NumericOperations, Accumulate)
+{
+    vector<int> nums{1, 2, 3};
+    const auto result1 = accumulate(nums.begin(), nums.end(), -1);
+
+    EXPECT_TRUE(result1 == 5);
+
+    const auto result2 = accumulate(nums.begin(), nums.end(), 2, multiplies<>());
+
+    EXPECT_TRUE(result2 == 12);
+
+}
+
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
