@@ -25,6 +25,15 @@ TEST(Asynchronous, ReturnsTheValueOfFunctionObj)
     EXPECT_TRUE(the_future.get() == "female");
 }
 
+// *** error ***
+
+TEST(Asynchronous, GetMayThrow)
+{
+    auto ghostrider = async([]{ throw runtime_error{"The pattern is full."};});
+
+    EXPECT_THROW(ghostrider.get(), runtime_error);
+}
+
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
