@@ -63,8 +63,7 @@ string factor_task(unsigned long long x){
 
 array<unsigned long long, 7> numbers{9'699'690, 179'426'549, 1'000'000'007, 4'294'967'291, 4'294'967'296, 1'307'674'368'000, 4'000};
 
-int main()
-{
+void funcOne(){
     chrono::nanoseconds elapsed_ns;
     {
         Stopwatch stopwatch{elapsed_ns};
@@ -76,6 +75,12 @@ int main()
     }
     const auto elapsed_ms = chrono::duration_cast<chrono::milliseconds>(elapsed_ns).count();
     cout << elapsed_ms << "ms : total program time\n";
+}
+
+
+int main()
+{
+    funcOne();
 
     return 0;
 }
