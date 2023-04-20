@@ -4,11 +4,25 @@
 
 using namespace std;
 
-TEST(Asyncronus, ReturnsValidFuture)
+TEST(Asynchronous, ReturnsValidFuture)
 {
     using namespace literals::string_literals;
     auto the_future =async([]{ return "female"s; });
     EXPECT_TRUE(the_future.valid());
+}
+
+TEST(Asynchronous, FutureInvalidByDefault)
+{
+    future<bool> default_future;
+    EXPECT_FALSE(default_future.valid());
+}
+
+TEST(Asynchronous, ReturnsTheValueOfFunctionObj)
+{
+    using namespace literals::string_literals;
+    auto the_future = async([]
+                            { return "female"s; });
+    EXPECT_TRUE(the_future.get() == "female");
 }
 
 int main(int argc, char** argv)
