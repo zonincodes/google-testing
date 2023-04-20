@@ -2,6 +2,7 @@
 #define DATA_STRUCTURES_H
 #include <cstring>
 #include <iostream>
+#include <set>
 
 struct Person
 {

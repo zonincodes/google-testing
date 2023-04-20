@@ -32,3 +32,4 @@ void ostreamTest()
     const std::vector<bool> bits{ true, false, true, false};
     std::cout << std::boolalpha << bits << std::endl;
 }
+
