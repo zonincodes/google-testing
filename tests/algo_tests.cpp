@@ -590,6 +590,35 @@ TEST(NumericOperations, Reduce)
     EXPECT_EQ(result2, 12);
 }
 
+// ******** inner_product *****************
+TEST(NumericOperations, InnerProduct)
+{
+    vector<int> nums1{1, 2, 3, 4, 5};
+    vector<int> nums2{1, 0, -1, 0, 1};
+
+    const auto result = inner_product(nums1.begin(), nums1.end(), nums2.begin(), 10);
+
+    EXPECT_EQ(result, 13);
+}
+
+// *************** adjacent_difference ************* 
+
+
+TEST(NumericOperations, AdjacentDifference)
+{
+    vector<int> fib{1, 1, 2, 3, 5, 8, 13}, fib_diff;
+    adjacent_difference(fib.begin(), fib.end(), back_inserter(fib_diff));
+    EXPECT_TRUE(fib_diff == (vector<int>{1, 0, 1, 1, 2, 3, 5}));
+}
+
+// ******************* partial_sum ***************
+TEST(NumericOperations, PartialSum)
+{
+    vector<int> num{ 1, 2, 3, 4}, result;
+    partial_sum(num.begin(), num.end(), back_inserter(result));
+    EXPECT_TRUE(result == (vector<int>{1, 3, 6, 10}));
+}
+
 // *************************** main ***************************
 int main(int argc, char** argv)
 {
